@@ -1,12 +1,24 @@
 /**
+ * PLUNKER VERSION
+ * (based on systemjs.config.js in angular.io)
  * System configuration for Angular samples
  * Adjust as necessary for your application needs.
  */
 (function (global) {
   System.config({
+    // DEMO ONLY! REAL CODE SHOULD NOT TRANSPILE IN THE BROWSER
+    transpiler: 'ts',
+    typescriptOptions: {
+      tsconfig: true
+    },
+    meta: {
+      'typescript': {
+        "exports": "ts"
+      }
+    },
     paths: {
       // paths serve as alias
-      'npm:': 'node_modules/'
+      'npm:': 'https://unpkg.com/'
     },
     // map tells the System loader where to look for things
     map: {
@@ -27,12 +39,15 @@
       // other libraries
       'rxjs':                      'npm:rxjs',
       'angular-in-memory-web-api': 'npm:angular-in-memory-web-api',
+      'ts':                        'npm:plugin-typescript@4.0.10/lib/plugin.js',
+      'typescript':                'npm:typescript@2.0.2/lib/typescript.js',
+
     },
     // packages tells the System loader how to load when no filename and/or no extension
     packages: {
       app: {
-        main: './main.js',
-        defaultExtension: 'js'
+        main: './main.ts',
+        defaultExtension: 'ts'
       },
       rxjs: {
         defaultExtension: 'js'
@@ -44,3 +59,10 @@
     }
   });
 })(this);
+
+
+/*
+Copyright 2016 Google Inc. All Rights Reserved.
+Use of this source code is governed by an MIT-style license that
+can be found in the LICENSE file at http://angular.io/license
+*/
