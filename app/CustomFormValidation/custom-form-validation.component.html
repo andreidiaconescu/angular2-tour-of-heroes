@@ -1,0 +1,20 @@
+<div>
+    <h2>Demo Form: Custom Validation</h2>
+    <form #f="ngForm"  >
+        <!--<div> (ngSubmit)="onSubmit(f.value)"-->
+            <!--<label for="skuInput">SKU</label>-->
+            <!--<input type="text"-->
+                   <!--id="skuInput"-->
+                   <!--placeholder="SKU"-->
+                   <!--name="sku" ngModel>-->
+        <!--</div> validateEmail -->
+        <div>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="email" [(ngModel)]="formModel.email" #emailInput="ngModel" required validateEmail >
+            <div *ngIf="emailInput.control.hasError('required')" >email is required</div>
+            <div *ngIf="emailInput.control.hasError('validateEmail')" >email is invalid</div>
+            <!--<div>emailInput: {{ emailInput | json}}</div>-->
+        </div>
+        <button type="submit">Submit</button>
+    </form>
+</div>
