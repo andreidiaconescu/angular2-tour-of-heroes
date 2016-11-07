@@ -12,7 +12,7 @@ export class EmailValidatorDirective {
 
     emailBlackList:EmailBlackListService;
 
-    constructor(@Inject(forwardRef(() => EmailBlackListService)) emailBlackList) {
+    constructor(@Inject(forwardRef(() => EmailBlackListService)) emailBlackList:EmailBlackListService) {
         this.emailBlackList = emailBlackList;
     }
 

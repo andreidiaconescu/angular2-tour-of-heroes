@@ -18,7 +18,7 @@ export class CustomFormValidationComponent implements OnInit {
     ngOnInit():void {
     }
 
-    onSubmit(formValues) {
+    onSubmit(formValues:any) {
 
     }
 }
